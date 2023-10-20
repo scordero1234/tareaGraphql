@@ -32,15 +32,15 @@ let root = {
         return ClienteModel.findById(data.id);
     },
     addCliente: (data) => {
-        const newCliente = new ClienteModel({ 
-            id: data.id,
+        const newCliente = new ClienteModel({
+            
             nombre: data.nombre,
             telefono: data.telefono,
         });
 
         return newCliente.save();
     },
-}; 
+};
 
 const config = require('./config') 
 const db = require('./db')
