@@ -7,6 +7,7 @@ const { ClienteModel } = require('./cliente/model');
 
 let schema = buildSchema(`
     type Cliente {
+        _id:ID!
         id: Int
         nombre: String
         telefono: String
@@ -31,8 +32,7 @@ let root = {
         return ClienteModel.findById(data.id);
     },
     addCliente: (data) => {
-        const newCliente = new ClienteModel({
-            id:data.id,
+        const newCliente = new ClienteModel({ 
             nombre: data.nombre,
             telefono: data.telefono,
         });
